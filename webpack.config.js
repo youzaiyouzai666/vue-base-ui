@@ -2,6 +2,7 @@ const fs = require('fs')
 const path = require('path')
 const webpack = require('webpack')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     devtool: 'inline-source-map',
@@ -17,7 +18,14 @@ module.exports = {
     module: {
         rules: [
             { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
-            { test: /\.vue$/, loader: 'vue-loader' },
+            {
+                test: /\.vue$/, loader: 'vue-loader', options: {
+                    loaders: {
+                        scss: 'vue-style-loader!css-loader!sass-loader', // <style lang="scss">
+                        sass: 'vue-style-loader!css-loader!sass-loader?indentedSyntax' // <style lang="sass">
+                    }
+                }
+            },
             {
                 test: /\.scss$/,
                 use: [{
@@ -32,6 +40,9 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin(['dist']),
+        new CopyWebpackPlugin([
+            {from: './example/example.html'}
+        ], {}),
         new webpack.HotModuleReplacementPlugin()
     ],
     resolve: {

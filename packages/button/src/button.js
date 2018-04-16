@@ -1,4 +1,4 @@
-import './button.scss';
+// import './button.scss';
 export default {
     name: 'vButton',
     props:{
