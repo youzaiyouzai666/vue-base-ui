@@ -6,6 +6,9 @@ const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 const WebpackConfig = require('./webpack.config');
+const path = require('path');
+const config = require('./config.js')
+
 
 const app = express();
 const compiler = webpack(WebpackConfig);
@@ -21,9 +24,9 @@ app.use(webpackDevMiddleware(compiler, {
 
 app.use(webpackHotMiddleware(compiler));
 
-app.use(express.static(__dirname));
+app.use(express.static(path.join(__dirname, 'dist')));
 
-const port = process.env.PORT || 3001
+const port = process.env.PORT || config.port || 3000
 module.exports = app.listen(port, () => {
     console.log(`Server listening on http://localhost:${port}, Ctrl+C to stop`)
 })

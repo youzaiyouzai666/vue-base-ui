@@ -2,7 +2,7 @@
   "name": "vue-base-ui",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./src/app.js",
   "scripts": {
     "server": "node ./server.js",
     "build": "webpack -w",
@@ -19,6 +19,7 @@
     "copy-webpack-plugin": "^4.5.1",
     "css-loader": "^0.28.11",
     "express": "^4.16.2",
+    "open-browser-webpack-plugin": "0.0.5",
     "sass-loader": "^7.0.1",
     "style-loader": "^0.20.3",
     "vue": "^2.5.13",

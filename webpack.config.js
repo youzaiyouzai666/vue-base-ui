@@ -2,7 +2,9 @@ const fs = require('fs')
 const path = require('path')
 const webpack = require('webpack')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+const OpenBrowserPlugin = require('open-browser-webpack-plugin')
+const {port} = require('./config.js')
 
 module.exports = {
     devtool: 'inline-source-map',
@@ -39,11 +41,12 @@ module.exports = {
         ]
     },
     plugins: [
-        new CleanWebpackPlugin(['dist']),
         new CopyWebpackPlugin([
-            {from: './example/example.html'}
+            {from: './example/index.html',to:'./index.html'}
         ], {}),
-        new webpack.HotModuleReplacementPlugin()
+        // new CleanWebpackPlugin(['dist']),
+        new webpack.HotModuleReplacementPlugin(),
+        new OpenBrowserPlugin({ url: 'http://localhost:'+port })
     ],
     resolve: {
         alias: { 'vue$': 'vue/dist/vue.common.js' },

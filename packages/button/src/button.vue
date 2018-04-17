@@ -5,5 +5,5 @@
     </div>
 </div>
 </template>
-<style src="./button.scss" lang="scss"></style>
-<script src="./button.js"></script?
+<style src="./button.scss" lang="scss" scoped></style>
+<script src="./button.js"></script>

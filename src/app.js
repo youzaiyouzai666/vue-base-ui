@@ -10,6 +10,10 @@ Vue.config.productionTip = false
 const install = {
 
 }
+
+import ToastPlugin from './plugins/toast/index.js';
+Vue.use(ToastPlugin);
+
 export default {
   vaesion: '1.0.0',
   install,
