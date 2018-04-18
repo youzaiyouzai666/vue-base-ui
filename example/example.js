@@ -8,9 +8,7 @@ new Vue({
     data:{},
     methods:{
         open(){
-            debugger;
             this.$_vux.toast.show({
-
                 text: 'Hello World',
                 time: 1500,
                 onShow () {

@@ -13,6 +13,8 @@ const config = require('./config.js')
 const app = express();
 const compiler = webpack(WebpackConfig);
 
+app.use(webpackHotMiddleware(compiler));
+
 app.use(webpackDevMiddleware(compiler, {
     publicPath: '/dist/',
     //控制输出
@@ -22,7 +24,9 @@ app.use(webpackDevMiddleware(compiler, {
     }
 }));
 
-app.use(webpackHotMiddleware(compiler));
+app.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname,'example' ,'index.html'));
+  });
 
 app.use(express.static(path.join(__dirname, 'dist')));
 

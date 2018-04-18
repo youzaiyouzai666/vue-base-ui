@@ -1,14 +1,11 @@
 import Vue from 'vue';
 import Toast from './toast.vue';
 
-console.log(Toast);
 export default {
     install(vue, options) {
-        debugger;
-        console.log('123123');
         const _$vm =new Vue(Toast).$mount(document.createElement('div'));
         document.body.appendChild(_$vm.$el);
-
+        console.log(_$vm.$el);
         const toast = {
             show(options){
                 _$vm.display = true;

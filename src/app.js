@@ -4,15 +4,16 @@ import Vue from 'vue'
 
 import Button from '../packages/button/index.js'
 
+// 组件包公共的样式
+import '../packages/base/common.scss'
 
 Vue.config.productionTip = false
 
-const install = {
+//注入 toast组件
+import ToastPlugin from './plugins/toast/index.js'
+Vue.use(ToastPlugin)
 
-}
-
-import ToastPlugin from './plugins/toast/index.js';
-Vue.use(ToastPlugin);
+const install = function(Vue, opts={}){}
 
 export default {
   vaesion: '1.0.0',

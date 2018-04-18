@@ -44,7 +44,7 @@ module.exports = {
         new CopyWebpackPlugin([
             {from: './example/index.html',to:'./index.html'}
         ], {}),
-        // new CleanWebpackPlugin(['dist']),
+        new CleanWebpackPlugin(['dist']),
         new webpack.HotModuleReplacementPlugin(),
         new OpenBrowserPlugin({ url: 'http://localhost:'+port })
     ],

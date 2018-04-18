@@ -1,6 +1,6 @@
 <template>
   <div class="v-button-wrapper">
-    <div class="v-button">
+    <div class="v-button" @click="handleClick">
        <span class="v-button-text">{{value}}</span>
     </div>
 </div>

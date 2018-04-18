@@ -1,4 +1,7 @@
 export default {
+    data:function(){
+        return {}
+    },
     props:{
         display: {
             type: Boolean,
@@ -6,7 +9,7 @@ export default {
         },
         text: {
             type: String,
-            default: ''
+            default: 'toast'
         },
         time: {
             type: Number,
