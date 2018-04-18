@@ -17,11 +17,11 @@ export default {
         }
     },
     watch:{
-        dispalay(val){
+        display(val){
             if(val){
                 clearTimeout(this.timeout);
                 this.timeout = setTimeout(()=>{
-                    this.dispalay = false
+                    this.display = false
                 }, this.time);
             }
         }

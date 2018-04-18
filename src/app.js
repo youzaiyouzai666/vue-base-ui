@@ -11,9 +11,13 @@ Vue.config.productionTip = false
 
 //注入 toast组件
 import ToastPlugin from './plugins/toast/index.js'
-Vue.use(ToastPlugin)
 
-const install = function(Vue, opts={}){}
+
+const install = function(Vue, opts={}){
+  Vue.prototype.$_vux = {
+    toast : ToastPlugin
+  }
+}
 
 export default {
   vaesion: '1.0.0',

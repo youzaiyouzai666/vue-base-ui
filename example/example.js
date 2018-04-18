@@ -1,7 +1,8 @@
 import Vue from 'vue';
 import app from '../src/app'
 
-Vue.use(app.Button);
+Vue.use(app)
+Vue.use(app.Button)
 
 new Vue({
     el: '#app',
@@ -12,10 +13,10 @@ new Vue({
                 text: 'Hello World',
                 time: 1500,
                 onShow () {
-                    console.log('toast show');
+                    console.log('toast show')
                 },
                 onHide () {
-                    console.log('toast hide');
+                    console.log('toast hide')
                 }
             });
         }
