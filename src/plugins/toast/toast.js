@@ -22,7 +22,7 @@ export default {
                 clearTimeout(this.timeout);
                 this.timeout = setTimeout(()=>{
                     this.display = false
-                }, this.time);
+                }, this.time)
             }
         }
     }
