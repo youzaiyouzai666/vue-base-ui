@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import app from '../src/app'
+import app from '../dist/app'
 
 Vue.use(app)
 Vue.use(app.Button)
